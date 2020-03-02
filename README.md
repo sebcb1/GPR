@@ -50,7 +50,7 @@ Pour simuler l'effet d'un cache sur le temps de réponse
 pipenv run python run1.py
 ```
 
-![Cache Type](GPR/exemple1/cache_type.png)
+![Cache Type](exemple1/cache_type.png)
 
 ## Outils et sources
 
