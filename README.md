@@ -37,9 +37,6 @@ pipenv install
 
 Si on ne passe par par github et Pipfile:
 
-pip3 install --user tensorflow==1.14.0
-
-
 ```
 pipenv --python /usr/bin/python3
 pipenv install 'tensorflow<2.0'
@@ -145,6 +142,26 @@ SI on augmente le nombre de point:
 
 A la fin on note que la courbe obtenue colle assez bien à la focntion d'origine
 Mais nous avons 30 mesures !!
+
+### Exemple 5: Trouver les points à explorer
+
+On devrait obtenir la même chose que précédement avec moins de points
+Il faut définir une fonction d'acquisition qui détermine le prochain point à exploré
+
+Par exemple: -mean+k.var
+
+```
+pipenv run python run5a.py
+```
+
+Ici je prend 5 points au hazard et je faire une recherche sur les 5 prochains points:
+
+![exemple5](exemple5/run0.png)
+![exemple5](exemple5/run1.png)
+![exemple5](exemple5/run2.png)
+![exemple5](exemple5/run3.png)
+![exemple5](exemple5/run4.png)
+![exemple5](exemple5/run5.png)
 
 ## Outils et sources
 
