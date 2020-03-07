@@ -221,9 +221,47 @@ pipenv run python run6d.py
 ```
 x1: %d [4.04040404]
 x2: %d [5.35353535]
+
+dbtime(x) = 5.90
 ```
 
 ![exemple6](exemple6/dbtime.png)
+
+Maintenant la recherche sur cette précédente fonction avec 2 paramètres:
+
+```
+pipenv run python run6e.py
+```
+
+Ce qui donne:
+
+```
+Searching for min...
+Next point to explore: [2.4 9.9] and dbtime(x)=[12.12074524]
+Next point to explore: [2.3 8.5] and dbtime(x)=[10.28087977]
+Next point to explore: [3.8 0. ] and dbtime(x)=[12.01]
+Next point to explore: [2.3 7.8] and dbtime(x)=[15.77215567]
+Next point to explore: [3.9 9.2] and dbtime(x)=[9.16841516]
+Next point to explore: [9.6 4.5] and dbtime(x)=[19.13449986]
+Next point to explore: [2.2 2. ] and dbtime(x)=[15.1029217]
+Next point to explore: [7.3 5.5] and dbtime(x)=[8.66369986]
+Next point to explore: [0.  5.1] and dbtime(x)=[10.61260996]
+Next point to explore: [4.6 5.4] and dbtime(x)=[5.92995689]
+Next point to explore: [3.4 5.3] and dbtime(x)=[6.01388963]
+Next point to explore: [4.2 5.2] and dbtime(x)=[6.19587824]
+Next point to explore: [4.  5.4] and dbtime(x)=[5.83995689]
+Next point to explore: [4.2 5.3] and dbtime(x)=[5.93388963]
+Next point to explore: [3.8 5.4] and dbtime(x)=[5.84995689]
+Next point to explore: [3.9 5.4] and dbtime(x)=[5.84245689]
+Next point to explore: [4.  5.4] and dbtime(x)=[5.83995689]
+Next point to explore: [4.  5.4] and dbtime(x)=[5.83995689]
+Next point to explore: [4.  5.4] and dbtime(x)=[5.83995689]
+Next point to explore: [4.  5.4] and dbtime(x)=[5.83995689]
+```
+
+Dans cette exemple nous fesons 20 recherches après un tirage au sort de 10 points
+Le minimum global a été trouvé après 13 tentatives !
+
 
 ## Outils et sources
 
