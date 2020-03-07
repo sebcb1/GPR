@@ -161,7 +161,69 @@ Ici je prend 5 points au hazard et je faire une recherche sur les 5 prochains po
 ![exemple5](exemple5/run2.png)
 ![exemple5](exemple5/run3.png)
 ![exemple5](exemple5/run4.png)
-![exemple5](exemple5/run5.png)
+
+### Exemple 6: Trouver le minimum
+
+Je vais transformer sous forme d'objet le code précédent
+On y configurera un certains nombre de run et l'objet nous retournera le minimum global.
+
+Toujours avec la même fonction
+
+```
+pipenv run python run6a.py
+```
+
+Après 20 run:
+
+```
+Searching for min...
+10.0
+0.0
+5.555555555555555
+8.787878787878787
+4.646464646464646
+6.4646464646464645
+0.8080808080808081
+9.292929292929292
+5.151515151515151
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+5.353535353535354
+```
+
+![exemple6](exemple6/result6a_20.png)
+
+Pour l'exemple suivant on passe sur une focntion à deux paramètres, dernier exemple avant une généralisation à x paramètres et dernier exemple graphable.
+
+Voici ma nouvelle fonction:
+
+```
+pipenv run python run6b.py
+```
+
+![exemple6](exemple6/dbtime2.png)
+
+
+Une recherche par grille nous donne le minimum de la fonction suivante à deux paramètres:
+
+```
+pipenv run python run6d.py
+```
+
+```
+x1: %d [4.04040404]
+x2: %d [5.35353535]
+```
+
+![exemple6](exemple6/dbtime.png)
 
 ## Outils et sources
 
