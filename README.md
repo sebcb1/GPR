@@ -30,6 +30,8 @@ pip3 install pipenv
 ## Mise en place depuis github
 
 ```
+git clone https://github.com/sebcb1/GPR.git
+cd GPR
 pipenv install
 ```
 
