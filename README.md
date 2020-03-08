@@ -41,6 +41,7 @@ Si on ne passe par par github et Pipfile:
 
 ```
 pipenv --python /usr/bin/python3
+pipenv install scikit-optimize
 pipenv install 'tensorflow<2.0'
 pipenv install numpy
 pipenv install 'gpflow<2.0'
@@ -264,6 +265,48 @@ Next point to explore: [4.  5.4] and dbtime(x)=[5.83995689]
 Dans cette exemple nous fesons 20 recherches après un tirage au sort de 10 points
 Le minimum global a été trouvé après 13 tentatives !
 
+Gros problèmes pour explorer j'utilise une grille de 100x100.
+Avec 10 paramètres l'exploration devient impossible
+
+
+
+### Exemple 7: Trouver le minimum avec scikit-optimize
+
+Dans cette exemple on va utiliser scikit-optimize une librairie sous license BSD pour faire une optimisation Baysien
+
+[c'est ici](https://scikit-optimize.github.io/stable/)
+
+Je vais utiliser une focntion à deux paramètres, mais cette fois ci ils auraont pas tous le même poids dans le temps de réponse.
+Le premier aura un poids 10 fois supérieur aux autres et le second 5 fois.
+
+```
+def dbtime(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10):
+    return np.sin(p1)*10+np.sin(p2)*5+np.sin(p3)+np.sin(p4)+np.sin(p5)+np.sin(p6)+np.sin(p7)+np.sin(p8)+np.sin(p9)+np.sin(p10)+3*8+10+5+np.random.rand()*0.8
+```
+
+Cela donne:
+
+dbtime(4.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71)=16 -> meilleur dbtime
+dbtime(2.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71)=30.2
+dbtime(4.71,4.71,4.71,4.71,4.71,4.71,2.71,4.71,4.71,4.71)=17.4
+dbtime(4.71,2.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71,4.71)=23
+
+
+```
+pipenv run python run7a.py
+```
+
+On obtient après 50 itérations:
+```
+20.190695918052192
+[4.72177374162061, 4.42579207371823, 6.0, 4.552583101334137, 4.392013997261914, 4.997431725857613, 6.0, 6.0, 0.0, 6.0]
+```
+
+On obtient après 100 itérations:
+```
+18.665047607398932
+[4.5086242708447255, 4.461709669974958, 3.8653693442529846, 4.661924534351003, 4.350545819426848, 3.802560062990678, 6.0, 4.334021490192263, 4.701599014567268, 6.0]
+```
 
 ## Outils et sources
 
@@ -272,7 +315,9 @@ Le minimum global a été trouvé après 13 tentatives !
 * [Documentations GPFlow](https://gpflow.readthedocs.io/en/stable/index.html)
 * [GitHub GPflow](https://github.com/GPflow/GPflow)
 * [Les releases TensorFlow](https://pypi.org/project/tensorflow/#history)
-
-
+* [The Multi-Armed Bandit Problem and Its Solutions](https://lilianweng.github.io/lil-log/2018/01/23/the-multi-armed-bandit-problem-and-its-solutions.html)
+* [Bandit manchot (mathématiques)](https://fr.wikipedia.org/wiki/Bandit_manchot_(math%C3%A9matiques))
+* [Reinforcement Learning Guide: Solving the Multi-Armed Bandit Problem from Scratch in Python](https://www.analyticsvidhya.com/blog/2018/09/reinforcement-multi-armed-bandit-scratch-python/)
+* [Bayesian optimization](http://krasserm.github.io/2018/03/21/bayesian-optimization/)
 
 

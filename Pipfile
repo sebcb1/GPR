@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+scikit-optimize = "*"
 tensorflow = "<2.0"
 numpy = "*"
 gpflow = "<2.0"
